@@ -25,6 +25,6 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
-    this.nav.navigateRoot('login')
+    // this.nav.navigateRoot('login')
   }
 }

@@ -1,42 +1,93 @@
 <ion-content>
-<ion-grid>
-  <ion-row class="lead-row">
-    <ion-col class="profile-header" size="12">
-      <div>
-        <ion-img src=""></ion-img>
-      </div>
-      <div>
-        <ion-slides [options]="slideOptions">
-          <ion-slide *ngFor="let userApproval of approval | async">
-            <ion-card class="approval-card">
-              <ion-card-content>
-                <div class="card-content-div">
-                    <img class="approval-img" [src]="userApproval.img"/>
-                    <div class="sub-content">
-                        <h4 class="approval-text">{{userApproval.name + ' ' + userApproval.lastname }}</h4>
-                        <h6 class="approval-text">{{userApproval.role}}</h6>
-                    </div>
-                </div>
-                
-                 </ion-card-content>
-                 <ion-card-header class="approval-card-header">
-                    <div class="header-divider">
-                       <p>{{userApproval.Reason}}</p>
-                    </div>
-                    <div class="header-dividers">
-                       <p>2 days</p>
-                    </div>
-                  </ion-card-header>
-            </ion-card>
-          </ion-slide>
-        </ion-slides>
-      </div>
-
-    </ion-col>
-    <ion-col size="12">
+  <ion-grid>
+    <ion-row class="lead-row">
+      <ion-col class="profile-header" size="12">
+        <div class="profile-div">
+          <img class="profile-img" [src]="this.profileImg" />
       
-    </ion-col>
-    
-  </ion-row>
-</ion-grid>
+        </div>
+        <div class="profile-info">
+          <h5> {{this.profileName + ' ' + this.profileLastname }}
+          </h5>
+          <p>
+            {{this.role}}
+          </p>
+        </div>
+        <div>
+          <ion-slides [options]="slideOptions">
+            <ion-slide *ngFor="let userApproval of approval | async">
+              <ion-card class="approval-card">
+                <ion-card-content>
+                  <div class="card-content-div">
+                    <img class="approval-img" [src]="userApproval.img" />
+                    <div class="sub-content">
+                      <h4 class="approval-text">{{userApproval.name + ' ' + userApproval.lastname }}</h4>
+                      <h6 class="approval-text">{{userApproval.role}}</h6>
+                    </div>
+                  </div>
+
+                </ion-card-content>
+                <ion-card-header class="approval-card-header">
+                  <div class="header-divider">
+                    <p>{{userApproval.Reason}}</p>
+                  </div>
+                  <div class="header-dividers">
+                    <p>2 days</p>
+                  </div>
+                </ion-card-header>
+              </ion-card>
+            </ion-slide>
+          </ion-slides>
+        </div>
+
+      </ion-col>
+      <ion-col size="12" class="leave-divider">
+        <div class="first-row">
+          <ion-card class="leave-card">            
+            <ion-card-content class="leave-card-content">              
+                  <img class="vl-img"src="./assets/img/vacation-leave.png"/>
+                  <ion-card-subtitle>
+                      <ion-text>
+                        Vacation Leave
+                      </ion-text>
+                    </ion-card-subtitle>
+                </ion-card-content>
+          </ion-card>
+          <ion-card class="leave-card">            
+              <ion-card-content class="leave-card-content">              
+                    <img class="vl-img"src="./assets/img/sick-leave.png"/>
+                    <ion-card-subtitle>
+                        <ion-text>
+                          Sick Leave
+                        </ion-text>
+                      </ion-card-subtitle>
+                  </ion-card-content>
+            </ion-card> 
+        </div>
+        <div class="second-row">
+            <ion-card class="leave-card">            
+                <ion-card-content class="leave-card-content">              
+                      <img class="vl-img"src="./assets/img/medical-leave.png"/>
+                      <ion-card-subtitle>
+                          <ion-text>
+                            Medical Leave
+                          </ion-text>
+                        </ion-card-subtitle>
+                    </ion-card-content>
+              </ion-card>
+              <ion-card class="leave-card">            
+                  <ion-card-content class="leave-card-content">              
+                        <img class="vl-img"src="./assets/img/maternity-leaver.png"/>
+                        <ion-card-subtitle>
+                            <ion-text>
+                              Maternity Leave
+                            </ion-text>
+                          </ion-card-subtitle>
+                      </ion-card-content>
+                </ion-card>
+        </div>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -13,6 +13,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ReactiveFormsModule } from '@angular/forms';
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
      AppRoutingModule,
      AngularFireAuthModule, 
      AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule],
+    AngularFirestoreModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
