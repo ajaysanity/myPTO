@@ -1,0 +1,69 @@
+<!-- <ion-content padding>
+  <div class="fullContainer">
+    <div>
+        <ion-img src="../../assets/img/CROWD-CONNECT-Logo-B8.png" style="margin-top: -20vw;"></ion-img>
+         <h3 class="ion-text-center font-white">Crowd Connect Leader</h3> comment
+    </div> -->
+
+<!-- <form novalidate [formGroup]="form" (ngSubmit)="signin()" class="fullWidth" style="text-align: center;    margin-top: -32vw;">
+      <ion-item>
+        <ion-label color="primary" position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email" class="form-control ionic-input" required></ion-input>
+      </ion-item>
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <ion-item lines="none"
+          *ngIf="form.get('email').hasError(validation.type) && (form.get('email').dirty || form.get('email').touched)">
+          <ion-icon color="danger" name="alert"></ion-icon>
+          <ion-label color="danger"> {{ validation.message }}</ion-label>
+        </ion-item>
+      </ng-container>
+      <ion-item>
+        <ion-label color="primary" position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password" class="form-control" required></ion-input>
+      </ion-item>
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <ion-item lines="none"
+          *ngIf="form.get('password').hasError(validation.type) && (form.get('password').dirty || form.get('password').touched)">
+          <ion-icon color="danger" name="alert"></ion-icon>
+          <ion-label color="danger"> {{ validation.message }}</ion-label>
+        </ion-item>
+      </ng-container>
+      <ion-button type="submit" [disabled]="!form.valid" expand="block" color="tertiary">Sign in</ion-button>
+      <a href="/qrregister" style="color: #fff;">
+        Test deployment
+      </a>       
+    </form>       
+  </div>
+</ion-content> -->
+
+<ion-content class="login-content">
+    <ion-grid class="login-grid">
+      <ion-row class="login-image">
+        <form #form="ngForm" autocomplete="off">
+            <ion-col size="12">
+                <ion-img class="login-logo" src="../../assets/img/acn-logo.png"></ion-img>
+              </ion-col>
+          <ion-col size="12">
+            <ion-item class="login-item form-group">
+              <ion-icon name="contacts"></ion-icon>
+              <ion-input type="text" name="email" #email="ngModel" [ngModel]="authData?.email" class="login-input" placeholder="Email"></ion-input>
+            </ion-item>
+            <ion-item class="login-item form-group">
+              <ion-icon name="key"></ion-icon>
+              <ion-input type="password" name="password" #password="ngModel" [ngModel]="authData?.password" class="login-input" placeholder="Password"></ion-input>
+            </ion-item>
+            <ion-button (click)="signin(form)" expand="full">Login</ion-button>
+            <!-- <ion-button [routerLink]="['/register']"> <ion-title style="color: white"> Register</ion-title></ion-button> -->
+          </ion-col>
+        </form>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  <!-- <ion-footer no-border>
+      <ion-toolbar class="ion-text-center" color="primary" class="font-white">
+        <a href="/qrregister">
+          <ion-title>Register</ion-title>
+        </a>   
+      </ion-toolbar>
+  </ion-footer> -->
+  

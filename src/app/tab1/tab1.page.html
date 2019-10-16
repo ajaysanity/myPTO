@@ -1,0 +1,42 @@
+<ion-content>
+<ion-grid>
+  <ion-row class="lead-row">
+    <ion-col class="profile-header" size="12">
+      <div>
+        <ion-img src=""></ion-img>
+      </div>
+      <div>
+        <ion-slides [options]="slideOptions">
+          <ion-slide *ngFor="let userApproval of approval | async">
+            <ion-card class="approval-card">
+              <ion-card-content>
+                <div class="card-content-div">
+                    <img class="approval-img" [src]="userApproval.img"/>
+                    <div class="sub-content">
+                        <h4 class="approval-text">{{userApproval.name + ' ' + userApproval.lastname }}</h4>
+                        <h6 class="approval-text">{{userApproval.role}}</h6>
+                    </div>
+                </div>
+                
+                 </ion-card-content>
+                 <ion-card-header class="approval-card-header">
+                    <div class="header-divider">
+                       <p>{{userApproval.Reason}}</p>
+                    </div>
+                    <div class="header-dividers">
+                       <p>2 days</p>
+                    </div>
+                  </ion-card-header>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </div>
+
+    </ion-col>
+    <ion-col size="12">
+      
+    </ion-col>
+    
+  </ion-row>
+</ion-grid>
+</ion-content>

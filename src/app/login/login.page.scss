@@ -1,0 +1,79 @@
+.login-content{
+	--ion-background-color: #292b38;
+	height: 100%;
+}
+.login-logo{
+    height: 25vh !important;
+    margin-top: -25vh;
+    margin-bottom: 2vh;
+}
+.login-grid{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	ion-col{
+		ion-button{
+			--background: #23BA8B !important;
+			max-width: 70%;
+			margin: 4vh auto;
+		}
+		p{
+			text-align: center;
+		}
+	}
+}
+.login-label{
+color:white;
+}
+
+.login-input{
+	color: white !important;
+	border: none !important;
+	font-size: 20px !important;
+}
+.login-item{
+	max-width: 85%;
+	margin: 2vh auto;
+	padding: 15px 0;
+	border: 0;
+	ion-icon{
+		color: white;
+		margin-right: 10px;
+	}
+}
+
+//Size for tablet
+@media only screen and (min-width: 600px) {
+	.login-input{
+		color: white !important;
+		border: none !important;
+		font-size: 30px !important;
+	}
+	.login-item{
+		max-width: 75%;
+		margin: 25px auto;
+		padding: 15px 0;
+		border: 0;
+		ion-icon{
+			color: white;
+			margin-right: 10px;
+			font-size: 40px !important;
+		}
+	}
+	.login-grid{
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		ion-col{
+			ion-button{
+				font-size: 30px;
+				opacity: 0.8;
+				max-width: 70%;
+				margin: 5vh auto;
+				height: 5vh;
+			}
+		}
+	}
+}

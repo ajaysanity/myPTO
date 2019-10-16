@@ -1,0 +1,59 @@
+.profile-header{
+  height:40vh;
+  background-color: #004f94
+}
+ion-grid{
+  margin:0;
+  padding: 0;
+}
+
+.approval-img{
+  height:10vh !important;
+  width: auto !important;
+  border-radius: 50%;
+}
+.approval-card{
+  height: auto;
+  width: 75vw;
+  background-color: black;
+}
+.card-content-div{
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+.sub-content{
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 5px;
+
+
+  h4{
+    font-weight: bold;
+
+  }
+}
+.header-divider{
+  border-right: 1px solid #eeeeee;
+  width:50%;
+  height: auto;
+  text-align: center;
+  margin: 0;
+  padding:0;
+  font-weight: bold;
+
+}
+.header-dividers{
+  width:50%
+}
+
+.approval-card-header{
+  height:auto;
+  border-top: 1px solid white;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding:0;
+  color: white;
+ margin-top: 10px;
+}
