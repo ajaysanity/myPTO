@@ -1,5 +1,7 @@
 {
   "name": "MyPTO",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
