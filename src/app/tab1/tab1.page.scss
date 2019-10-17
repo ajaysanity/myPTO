@@ -87,7 +87,7 @@ ion-grid{
   width: auto;
 }
 .leave-card{
-  width:40vw;
+  width:27vw;
 }
 .leave-card-content{
   display:flex;
@@ -98,4 +98,8 @@ ion-grid{
 .second-row{
   display: flex;
   flex-direction: row;
+}
+.div-img{
+  display: flex;
+  justify-content: center;
 }
