@@ -1,3 +1,4 @@
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Component } from '@angular/core';
 
 import { Platform, NavController } from '@ionic/angular';
@@ -15,7 +16,8 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private nav: NavController
+    private nav: NavController,
+    private afAuth: AngularFireAuth
   ) {
     this.initializeApp();
   }
@@ -24,6 +26,14 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.afAuth.auth.onAuthStateChanged(user =>{
+        if(user){
+          this.nav.navigateRoot('tabs')
+        }else{
+          this.nav.navigateRoot('login')
+
+        }
+      })
     });
     // this.nav.navigateRoot('login')
   }

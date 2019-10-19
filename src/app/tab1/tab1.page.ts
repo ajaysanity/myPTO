@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AngularFirestoreCollection, AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Approval,User } from '../models/user.model';
 import { map } from 'rxjs/operators';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -21,7 +22,8 @@ export class Tab1Page implements OnInit {
   profileImg: any;
   profileLastname: any;
   role:any;
-  constructor(private myapi: MypiService, public afDb: AngularFirestore) {
+  constructor(private myapi: MypiService, public afDb: AngularFirestore, private router: Router,
+    ) {
 
   }
   slideOptions={
@@ -60,4 +62,13 @@ this.role = data.role
 });
 }
 
+leaveType(type: any){
+  console.log(type)
+  let navigationExtras: NavigationExtras = {
+    state: {
+      type: type
+    }
+  }
+  this.router.navigate(['calendar'], navigationExtras)
+}
 }

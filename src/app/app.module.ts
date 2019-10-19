@@ -14,6 +14,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ReactiveFormsModule } from '@angular/forms';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgCalendarModule  } from 'ionic2-calendar';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
      AppRoutingModule,
      AngularFireAuthModule, 
      AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    NgCalendarModule
   ],
   providers: [
     StatusBar,
