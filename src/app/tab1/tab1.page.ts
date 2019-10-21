@@ -1,10 +1,12 @@
+import { FcmService } from './../fcm.service';
 import { MypiService } from './../api/mypi.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AngularFirestoreCollection, AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Approval,User } from '../models/user.model';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { NavigationExtras, Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -22,7 +24,10 @@ export class Tab1Page implements OnInit {
   profileImg: any;
   profileLastname: any;
   role:any;
-  constructor(private myapi: MypiService, public afDb: AngularFirestore, private router: Router,
+  constructor(private myapi: MypiService, 
+    public fcm: FcmService,
+    public toastCtrl: ToastController,
+    public afDb: AngularFirestore, private router: Router,
     ) {
 
   }
@@ -32,6 +37,13 @@ export class Tab1Page implements OnInit {
   
   }
 ngOnInit(){
+  this.fcm.getToken()
+  this.fcm.listenToNotifications().pipe(
+    tap( msg => {
+      this.presentToast(msg.body)
+    })
+  )
+
   this.getUserDoc
 
   this.myapi.getId().then(async (res:any) => {
@@ -48,6 +60,14 @@ ngOnInit(){
       }))
     ) 
   });
+}
+
+async presentToast(msg: any){
+  const toast = await this.toastCtrl.create({
+    message: msg.body,
+    duration: 3000
+  });
+   toast.present;
 }
 
 getUserDetails(uid: any){
